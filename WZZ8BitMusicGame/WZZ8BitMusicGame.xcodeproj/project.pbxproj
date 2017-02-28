@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		260AB05A1E6575DC00E18DDF /* WZZGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AB0591E6575DC00E18DDF /* WZZGameScene.m */; };
+		260AB0601E65764200E18DDF /* SCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AB05D1E65764200E18DDF /* SCListener.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		260AB0611E65764200E18DDF /* WZZListenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AB05F1E65764200E18DDF /* WZZListenManager.m */; };
+		264EC5D71E6513A30044BDFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC5D61E6513A30044BDFA /* main.m */; };
+		264EC5DA1E6513A30044BDFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC5D91E6513A30044BDFA /* AppDelegate.m */; };
+		264EC5E21E6513A30044BDFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264EC5E11E6513A30044BDFA /* Assets.xcassets */; };
+		264EC5E51E6513A30044BDFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264EC5E31E6513A30044BDFA /* LaunchScreen.storyboard */; };
+		264EC5F01E6513A30044BDFA /* WZZ8BitMusicGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC5EF1E6513A30044BDFA /* WZZ8BitMusicGameTests.m */; };
+		264EC5FB1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC5FA1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m */; };
+		264EC60B1E65158D0044BDFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC6091E65158D0044BDFA /* ViewController.m */; };
+		264EC60C1E65158D0044BDFA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264EC60A1E65158D0044BDFA /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		264EC5EC1E6513A30044BDFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 264EC5CA1E6513A30044BDFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 264EC5D11E6513A30044BDFA;
+			remoteInfo = WZZ8BitMusicGame;
+		};
+		264EC5F71E6513A30044BDFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 264EC5CA1E6513A30044BDFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 264EC5D11E6513A30044BDFA;
+			remoteInfo = WZZ8BitMusicGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		260AB0581E6575DC00E18DDF /* WZZGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZGameScene.h; sourceTree = "<group>"; };
+		260AB0591E6575DC00E18DDF /* WZZGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZGameScene.m; sourceTree = "<group>"; };
+		260AB05C1E65764100E18DDF /* SCListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCListener.h; sourceTree = "<group>"; };
+		260AB05D1E65764200E18DDF /* SCListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCListener.m; sourceTree = "<group>"; };
+		260AB05E1E65764200E18DDF /* WZZListenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZListenManager.h; sourceTree = "<group>"; };
+		260AB05F1E65764200E18DDF /* WZZListenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZListenManager.m; sourceTree = "<group>"; };
+		264EC5D21E6513A30044BDFA /* WZZ8BitMusicGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZZ8BitMusicGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		264EC5D61E6513A30044BDFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		264EC5D81E6513A30044BDFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		264EC5D91E6513A30044BDFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		264EC5E11E6513A30044BDFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		264EC5E41E6513A30044BDFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		264EC5E61E6513A30044BDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		264EC5EB1E6513A30044BDFA /* WZZ8BitMusicGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZZ8BitMusicGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		264EC5EF1E6513A30044BDFA /* WZZ8BitMusicGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZ8BitMusicGameTests.m; sourceTree = "<group>"; };
+		264EC5F11E6513A30044BDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		264EC5F61E6513A30044BDFA /* WZZ8BitMusicGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZZ8BitMusicGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		264EC5FA1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZ8BitMusicGameUITests.m; sourceTree = "<group>"; };
+		264EC5FC1E6513A40044BDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		264EC6081E65158D0044BDFA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		264EC6091E65158D0044BDFA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		264EC60A1E65158D0044BDFA /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		264EC5CF1E6513A30044BDFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264EC5E81E6513A30044BDFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264EC5F31E6513A30044BDFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		260AB0561E6575DC00E18DDF /* 游戏 */ = {
+			isa = PBXGroup;
+			children = (
+				260AB0571E6575DC00E18DDF /* 场景 */,
+			);
+			path = "游戏";
+			sourceTree = "<group>";
+		};
+		260AB0571E6575DC00E18DDF /* 场景 */ = {
+			isa = PBXGroup;
+			children = (
+				260AB0581E6575DC00E18DDF /* WZZGameScene.h */,
+				260AB0591E6575DC00E18DDF /* WZZGameScene.m */,
+			);
+			path = "场景";
+			sourceTree = "<group>";
+		};
+		260AB05B1E6575F000E18DDF /* 工具 */ = {
+			isa = PBXGroup;
+			children = (
+				260AB05C1E65764100E18DDF /* SCListener.h */,
+				260AB05D1E65764200E18DDF /* SCListener.m */,
+				260AB05E1E65764200E18DDF /* WZZListenManager.h */,
+				260AB05F1E65764200E18DDF /* WZZListenManager.m */,
+			);
+			path = "工具";
+			sourceTree = "<group>";
+		};
+		264EC5C91E6513A30044BDFA = {
+			isa = PBXGroup;
+			children = (
+				264EC5D41E6513A30044BDFA /* WZZ8BitMusicGame */,
+				264EC5EE1E6513A30044BDFA /* WZZ8BitMusicGameTests */,
+				264EC5F91E6513A30044BDFA /* WZZ8BitMusicGameUITests */,
+				264EC5D31E6513A30044BDFA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		264EC5D31E6513A30044BDFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				264EC5D21E6513A30044BDFA /* WZZ8BitMusicGame.app */,
+				264EC5EB1E6513A30044BDFA /* WZZ8BitMusicGameTests.xctest */,
+				264EC5F61E6513A30044BDFA /* WZZ8BitMusicGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		264EC5D41E6513A30044BDFA /* WZZ8BitMusicGame */ = {
+			isa = PBXGroup;
+			children = (
+				264EC5D81E6513A30044BDFA /* AppDelegate.h */,
+				264EC5D91E6513A30044BDFA /* AppDelegate.m */,
+				264EC6081E65158D0044BDFA /* ViewController.h */,
+				264EC6091E65158D0044BDFA /* ViewController.m */,
+				264EC60A1E65158D0044BDFA /* ViewController.xib */,
+				260AB05B1E6575F000E18DDF /* 工具 */,
+				260AB0561E6575DC00E18DDF /* 游戏 */,
+				264EC5E11E6513A30044BDFA /* Assets.xcassets */,
+				264EC5E31E6513A30044BDFA /* LaunchScreen.storyboard */,
+				264EC5E61E6513A30044BDFA /* Info.plist */,
+				264EC5D51E6513A30044BDFA /* Supporting Files */,
+			);
+			path = WZZ8BitMusicGame;
+			sourceTree = "<group>";
+		};
+		264EC5D51E6513A30044BDFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				264EC5D61E6513A30044BDFA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		264EC5EE1E6513A30044BDFA /* WZZ8BitMusicGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				264EC5EF1E6513A30044BDFA /* WZZ8BitMusicGameTests.m */,
+				264EC5F11E6513A30044BDFA /* Info.plist */,
+			);
+			path = WZZ8BitMusicGameTests;
+			sourceTree = "<group>";
+		};
+		264EC5F91E6513A30044BDFA /* WZZ8BitMusicGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				264EC5FA1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m */,
+				264EC5FC1E6513A40044BDFA /* Info.plist */,
+			);
+			path = WZZ8BitMusicGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		264EC5D11E6513A30044BDFA /* WZZ8BitMusicGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264EC5FF1E6513A40044BDFA /* Build configuration list for PBXNativeTarget "WZZ8BitMusicGame" */;
+			buildPhases = (
+				264EC5CE1E6513A30044BDFA /* Sources */,
+				264EC5CF1E6513A30044BDFA /* Frameworks */,
+				264EC5D01E6513A30044BDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WZZ8BitMusicGame;
+			productName = WZZ8BitMusicGame;
+			productReference = 264EC5D21E6513A30044BDFA /* WZZ8BitMusicGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		264EC5EA1E6513A30044BDFA /* WZZ8BitMusicGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264EC6021E6513A40044BDFA /* Build configuration list for PBXNativeTarget "WZZ8BitMusicGameTests" */;
+			buildPhases = (
+				264EC5E71E6513A30044BDFA /* Sources */,
+				264EC5E81E6513A30044BDFA /* Frameworks */,
+				264EC5E91E6513A30044BDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				264EC5ED1E6513A30044BDFA /* PBXTargetDependency */,
+			);
+			name = WZZ8BitMusicGameTests;
+			productName = WZZ8BitMusicGameTests;
+			productReference = 264EC5EB1E6513A30044BDFA /* WZZ8BitMusicGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		264EC5F51E6513A30044BDFA /* WZZ8BitMusicGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264EC6051E6513A40044BDFA /* Build configuration list for PBXNativeTarget "WZZ8BitMusicGameUITests" */;
+			buildPhases = (
+				264EC5F21E6513A30044BDFA /* Sources */,
+				264EC5F31E6513A30044BDFA /* Frameworks */,
+				264EC5F41E6513A30044BDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				264EC5F81E6513A30044BDFA /* PBXTargetDependency */,
+			);
+			name = WZZ8BitMusicGameUITests;
+			productName = WZZ8BitMusicGameUITests;
+			productReference = 264EC5F61E6513A30044BDFA /* WZZ8BitMusicGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		264EC5CA1E6513A30044BDFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = wzz;
+				TargetAttributes = {
+					264EC5D11E6513A30044BDFA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4TGUD96RNM;
+						ProvisioningStyle = Automatic;
+					};
+					264EC5EA1E6513A30044BDFA = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 264EC5D11E6513A30044BDFA;
+					};
+					264EC5F51E6513A30044BDFA = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 264EC5D11E6513A30044BDFA;
+					};
+				};
+			};
+			buildConfigurationList = 264EC5CD1E6513A30044BDFA /* Build configuration list for PBXProject "WZZ8BitMusicGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 264EC5C91E6513A30044BDFA;
+			productRefGroup = 264EC5D31E6513A30044BDFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				264EC5D11E6513A30044BDFA /* WZZ8BitMusicGame */,
+				264EC5EA1E6513A30044BDFA /* WZZ8BitMusicGameTests */,
+				264EC5F51E6513A30044BDFA /* WZZ8BitMusicGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		264EC5D01E6513A30044BDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264EC5E51E6513A30044BDFA /* LaunchScreen.storyboard in Resources */,
+				264EC60C1E65158D0044BDFA /* ViewController.xib in Resources */,
+				264EC5E21E6513A30044BDFA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264EC5E91E6513A30044BDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264EC5F41E6513A30044BDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		264EC5CE1E6513A30044BDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				260AB05A1E6575DC00E18DDF /* WZZGameScene.m in Sources */,
+				264EC60B1E65158D0044BDFA /* ViewController.m in Sources */,
+				260AB0611E65764200E18DDF /* WZZListenManager.m in Sources */,
+				264EC5DA1E6513A30044BDFA /* AppDelegate.m in Sources */,
+				260AB0601E65764200E18DDF /* SCListener.m in Sources */,
+				264EC5D71E6513A30044BDFA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264EC5E71E6513A30044BDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264EC5F01E6513A30044BDFA /* WZZ8BitMusicGameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264EC5F21E6513A30044BDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264EC5FB1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		264EC5ED1E6513A30044BDFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 264EC5D11E6513A30044BDFA /* WZZ8BitMusicGame */;
+			targetProxy = 264EC5EC1E6513A30044BDFA /* PBXContainerItemProxy */;
+		};
+		264EC5F81E6513A30044BDFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 264EC5D11E6513A30044BDFA /* WZZ8BitMusicGame */;
+			targetProxy = 264EC5F71E6513A30044BDFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		264EC5E31E6513A30044BDFA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				264EC5E41E6513A30044BDFA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		264EC5FD1E6513A40044BDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		264EC5FE1E6513A40044BDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		264EC6001E6513A40044BDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4TGUD96RNM;
+				INFOPLIST_FILE = WZZ8BitMusicGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZGameTableViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		264EC6011E6513A40044BDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4TGUD96RNM;
+				INFOPLIST_FILE = WZZ8BitMusicGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZGameTableViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		264EC6031E6513A40044BDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WZZ8BitMusicGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZ8BitMusicGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WZZ8BitMusicGame.app/WZZ8BitMusicGame";
+			};
+			name = Debug;
+		};
+		264EC6041E6513A40044BDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WZZ8BitMusicGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZ8BitMusicGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WZZ8BitMusicGame.app/WZZ8BitMusicGame";
+			};
+			name = Release;
+		};
+		264EC6061E6513A40044BDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WZZ8BitMusicGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZ8BitMusicGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WZZ8BitMusicGame;
+			};
+			name = Debug;
+		};
+		264EC6071E6513A40044BDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WZZ8BitMusicGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZ8BitMusicGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WZZ8BitMusicGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		264EC5CD1E6513A30044BDFA /* Build configuration list for PBXProject "WZZ8BitMusicGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264EC5FD1E6513A40044BDFA /* Debug */,
+				264EC5FE1E6513A40044BDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264EC5FF1E6513A40044BDFA /* Build configuration list for PBXNativeTarget "WZZ8BitMusicGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264EC6001E6513A40044BDFA /* Debug */,
+				264EC6011E6513A40044BDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264EC6021E6513A40044BDFA /* Build configuration list for PBXNativeTarget "WZZ8BitMusicGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264EC6031E6513A40044BDFA /* Debug */,
+				264EC6041E6513A40044BDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264EC6051E6513A40044BDFA /* Build configuration list for PBXNativeTarget "WZZ8BitMusicGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264EC6061E6513A40044BDFA /* Debug */,
+				264EC6071E6513A40044BDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 264EC5CA1E6513A30044BDFA /* Project object */;
+}
