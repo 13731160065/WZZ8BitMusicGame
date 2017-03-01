@@ -13,6 +13,8 @@
 
 @property (assign, nonatomic) BOOL showTest;
 
+@property (strong, nonatomic) NSString * bit8ImageText;
+
 /**
  游戏结束回调
  */

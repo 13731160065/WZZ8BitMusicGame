@@ -153,7 +153,9 @@ static int32_t loadMask = 0x1 << 1;
 #pragma mark 创建
 //创建小人
 - (void)creat8BitNode {
-    bit8 = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(30, 30)];
+    bit8 = [SKSpriteNode spriteNodeWithImageNamed:_bit8ImageText?_bit8ImageText:@"bit8"];
+    [bit8 setSize:CGSizeMake(30, 30)];
+//    bit8 = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(30, 30)];
     [bit8 setPosition:CGPointMake(self.size.width/3, self.size.height-25)];
     [self addChild:bit8];
     bit8.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bit8.size];
