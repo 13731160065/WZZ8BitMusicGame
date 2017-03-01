@@ -10,6 +10,8 @@
 #import "WZZListenManager.h"
 #define MOVEVECTOR 50
 #define TEST_OPEN 1
+#define LOADSPACE 60
+#define LOADHEIGHT 100
 
 @interface WZZGameScene ()
 {
@@ -49,7 +51,7 @@
     [self setup];
     
     //创建一开始的路
-    [self creatLoadWithRect:CGRectMake(0, 0, self.size.width, 100)];
+    [self creatLoadWithRect:CGRectMake(0, 0, self.size.width, LOADHEIGHT)];
     
     //创建小人
     [self creat8BitNode];
@@ -149,7 +151,8 @@
         if (level > jumpLevel) {
             [self jump8Bit:level];
             //往前跑
-            [self moveLoadWithLong:10*3 vector:3*MOVEVECTOR];
+            CGFloat jumpLong = (LOADSPACE+bit8.size.width)*level;
+            [self moveLoadWithLong:jumpLong vector:jumpLong/10*MOVEVECTOR];
         } else {
             //往前跑
             [self moveLoad];
@@ -175,6 +178,20 @@
 
 //移动陆地
 - (void)moveLoadWithLong:(CGFloat)loadLong vector:(CGFloat)vector {
+    //如果最后一块陆地超出了陆地间隙，那么就在后边再创建一块路堵
+    SKSpriteNode * lastLoad = [loadsArr lastObject];
+    if (self.size.width-(lastLoad.position.x+lastLoad.size.width/2) > LOADSPACE) {
+        [self creatLoadWithRect:CGRectMake(lastLoad.position.x+lastLoad.size.width/2+LOADSPACE, 0, arc4random()%200+50, LOADHEIGHT)];
+    }
+    
+    //如果第一块陆地走出了屏幕，那就把它移除
+    SKSpriteNode * firstLoad = [loadsArr firstObject];
+    if (firstLoad.position.x+firstLoad.size.width/2 < 0) {
+        [firstLoad removeFromParent];
+        [loadsArr removeObjectAtIndex:0];
+    }
+    
+    //循环移动陆地
     [loadsArr enumerateObjectsUsingBlock:^(SKSpriteNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj runAction:[SKAction moveToX:obj.position.x-loadLong duration:[self timeWithHowLong:loadLong vector:vector]]];
     }];
@@ -188,7 +205,7 @@
 //小人跳有等级
 - (void)jump8Bit:(Float32)level {
     if (bit8.position.y < 105+bit8.size.height/2 && bit8.position.y > 95+bit8.size.height/2) {
-        bit8.physicsBody.velocity = CGVectorMake(0, 700*level);
+        bit8.physicsBody.velocity = CGVectorMake(0, 1000*level);
     }
 }
 
