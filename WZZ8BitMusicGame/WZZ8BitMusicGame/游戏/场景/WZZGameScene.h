@@ -11,6 +11,8 @@
 
 @interface WZZGameScene : SKScene
 
+@property (assign, nonatomic) BOOL showTest;
+
 /**
  游戏结束回调
  */

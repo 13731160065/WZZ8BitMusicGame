@@ -9,7 +9,6 @@
 #import "WZZGameScene.h"
 #import "WZZListenManager.h"
 #define MOVEVECTOR 50
-#define TEST_OPEN 1
 #define LOADSPACE 60
 #define LOADHEIGHT 100
 
@@ -23,16 +22,15 @@ static int32_t loadMask = 0x1 << 1;
     WZZListenManager * manager;
     BOOL canJump;
     void(^_gameOverBlock)();
+    CGFloat currentVector;
 }
 
 @end
 
 @implementation WZZGameScene
-#if TEST_OPEN
 {
     NSArray * testArr;
 }
-#endif
 
 - (instancetype)initWithSize:(CGSize)size
 {
@@ -43,9 +41,9 @@ static int32_t loadMask = 0x1 << 1;
         [manager startListenWithBlock:^(Float32 level) {
             [self checkGameOver];
             [self handleActionWithVoiceLevel:level];
-#if TEST_OPEN
-            [self testLevel:level];
-#endif
+            if (_showTest) {
+                [self testLevel:level];
+            }
         }];
     }
     return self;
@@ -61,10 +59,12 @@ static int32_t loadMask = 0x1 << 1;
     
     //创建小人
     [self creat8BitNode];
-#if TEST_OPEN
-    //测试
-    [self creatTestButton];
-#endif
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (_showTest) {
+            //测试
+            [self creatTestButton];
+        }
+    });
 }
 
 - (void)setup {
@@ -76,9 +76,10 @@ static int32_t loadMask = 0x1 << 1;
     manager = [WZZListenManager shareManager];
     [manager startListenWithBlock:^(Float32 level) {}];//没用，但必须加这个，不然init里的监听不起作用
     canJump = YES;
+    currentVector = 1000;
 }
 
-#if TEST_OPEN
+#pragma mark - 测试方法
 - (void)testLevel:(Float32)level {
     CGPoint point = CGPointMake(202.5, self.size.height-50);
     SKSpriteNode * testNode = testArr[2];
@@ -87,23 +88,42 @@ static int32_t loadMask = 0x1 << 1;
 
 //测试
 - (void)creatTestButton {
+    //跳
     SKSpriteNode * jump = [SKSpriteNode spriteNodeWithColor:[UIColor orangeColor] size:CGSizeMake(50, 50)];
     [self addChild:jump];
     [jump setPosition:CGPointMake(50, self.size.height-50)];
     
+    //移动
     SKSpriteNode * move = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(50, 50)];
     [self addChild:move];
     [move setPosition:CGPointMake(150, self.size.height-50)];
     
+    //级别显示
     SKSpriteNode * level = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(20, 50)];
     [self addChild:level];
     [level setPosition:CGPointMake(200, self.size.height-50)];
-    
+    //级别遮盖
     SKSpriteNode * level2 = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(25, 50)];
     [self addChild:level2];
     [level2 setPosition:CGPointMake(202.5, self.size.height-50)];
     
-    testArr = @[jump, move, level2];
+    //动力+
+    SKSpriteNode * vectorA = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(25, 25)];
+    [self addChild:vectorA];
+    [vectorA setPosition:CGPointMake(250, self.size.height-50-25)];
+    //动力显示
+    SKLabelNode * vectorShow = [SKLabelNode labelNodeWithText:[NSString stringWithFormat:@"%.0lf", currentVector]];
+    vectorShow.fontName = [UIFont systemFontOfSize:15].fontName;
+    vectorShow.fontSize = 13;
+    vectorShow.fontColor = [UIColor blackColor];
+    [self addChild:vectorShow];
+    [vectorShow setPosition:CGPointMake(250+25+50/2, self.size.height-50-25-25/2)];
+    //动力-
+    SKSpriteNode * vectorR = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(25, 25)];
+    [self addChild:vectorR];
+    [vectorR setPosition:CGPointMake(250+25+50+25/2, self.size.height-50-25)];
+    
+    testArr = @[jump, move, level2, @[vectorA, vectorR, vectorShow]];
 }
 
 //测试按钮点击事件
@@ -112,13 +132,22 @@ static int32_t loadMask = 0x1 << 1;
     CGPoint po = [tou locationInNode:self];
     SKSpriteNode * node = testArr[0];
     SKSpriteNode * node2 = testArr[1];
+    SKSpriteNode * vA = testArr[3][0];
+    SKSpriteNode * vR = testArr[3][1];
+    SKLabelNode * vS = testArr[3][2];
+    
     if ([node containsPoint:po]) {
         [self jump8Bit];
     } else if ([node2 containsPoint:po]) {
         [self moveLoad];
+    } else if ([vA containsPoint:po]) {
+        currentVector += 10;
+        vS.text = [NSString stringWithFormat:@"%.0lf", currentVector];
+    } else if ([vR containsPoint:po]) {
+        currentVector -= 10;
+        vS.text = [NSString stringWithFormat:@"%.0lf", currentVector];
     }
 }
-#endif
 
 #pragma mark - 方法
 #pragma mark 创建
@@ -220,7 +249,7 @@ static int32_t loadMask = 0x1 << 1;
 //小人跳有等级
 - (void)jump8Bit:(Float32)level {
     if (canJump) {
-        bit8.physicsBody.velocity = CGVectorMake(0, 1000*level);
+        bit8.physicsBody.velocity = CGVectorMake(0, currentVector*level);
         canJump = NO;
     }
 }
@@ -228,6 +257,7 @@ static int32_t loadMask = 0x1 << 1;
 #pragma mark 游戏
 - (void)checkGameOver {
     if (bit8.position.y < -bit8.size.height) {
+        [[WZZListenManager shareManager] stopListen];
         //gameover
         if (_gameOverBlock) {
             _gameOverBlock();
