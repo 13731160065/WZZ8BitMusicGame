@@ -13,11 +13,15 @@
 #define LOADSPACE 60
 #define LOADHEIGHT 100
 
-@interface WZZGameScene ()
+static int32_t bit8Mask = 0x1 << 0;
+static int32_t loadMask = 0x1 << 1;
+
+@interface WZZGameScene ()<SKPhysicsContactDelegate>
 {
     SKSpriteNode * bit8;
     NSMutableArray <SKSpriteNode *>* loadsArr;
     WZZListenManager * manager;
+    BOOL canJump;
 }
 
 @end
@@ -63,11 +67,13 @@
 
 - (void)setup {
     self.physicsWorld.gravity = CGVectorMake(0, -9.8);
+    self.physicsWorld.contactDelegate = self;
     self.backgroundColor = [UIColor whiteColor];
     loadsArr = [NSMutableArray array];
     
     manager = [WZZListenManager shareManager];
     [manager startListenWithBlock:^(Float32 level) {}];//没用，但必须加这个，不然init里的监听不起作用
+    canJump = YES;
 }
 
 #if TEST_OPEN
@@ -120,6 +126,8 @@
     [self addChild:bit8];
     bit8.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bit8.size];
     bit8.physicsBody.mass = 10;
+    bit8.physicsBody.categoryBitMask = bit8Mask;
+    bit8.physicsBody.contactTestBitMask = loadMask;
 }
 
 //创建路
@@ -129,6 +137,8 @@
     load.position = CGPointMake(rect.origin.x+rect.size.width/2, rect.origin.y+rect.size.height/2);
     load.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rect.size];
     load.physicsBody.dynamic = NO;
+    load.physicsBody.categoryBitMask = loadMask;
+    load.physicsBody.contactTestBitMask = bit8Mask;
     [loadsArr addObject:load];
 }
 
@@ -204,8 +214,20 @@
 
 //小人跳有等级
 - (void)jump8Bit:(Float32)level {
-    if (bit8.position.y < 105+bit8.size.height/2 && bit8.position.y > 95+bit8.size.height/2) {
+    if (canJump) {
         bit8.physicsBody.velocity = CGVectorMake(0, 1000*level);
+        canJump = NO;
+    }
+}
+
+#pragma mark - 物理世界代理
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    if (((contact.bodyA.categoryBitMask == bit8Mask)&&(contact.bodyB.categoryBitMask == loadMask)) || ((contact.bodyB.categoryBitMask == bit8Mask)&&(contact.bodyA.categoryBitMask == loadMask))) {
+        //是小人撞到陆地了
+        if (bit8.position.y > bit8.size.height/2+LOADHEIGHT) {
+            //可以跳了
+            canJump = YES;
+        }
     }
 }
 
