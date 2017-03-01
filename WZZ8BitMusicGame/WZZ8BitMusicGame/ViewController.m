@@ -26,9 +26,17 @@
 }
     
 - (IBAction)startGame:(id)sender {
+    [self resetGame];
+}
+
+- (void)resetGame {
     gameView = [[SKView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:gameView];
     WZZGameScene * scene = [[WZZGameScene alloc] initWithSize:gameView.frame.size];
+    [scene gameOverBlock:^{
+        [gameView removeFromSuperview];
+        gameView = nil;
+    }];
     [gameView presentScene:scene];
 }
 

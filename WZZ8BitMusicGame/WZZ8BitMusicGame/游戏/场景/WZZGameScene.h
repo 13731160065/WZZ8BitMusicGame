@@ -11,4 +11,9 @@
 
 @interface WZZGameScene : SKScene
 
+/**
+ 游戏结束回调
+ */
+- (void)gameOverBlock:(void(^)())aBlock;
+
 @end

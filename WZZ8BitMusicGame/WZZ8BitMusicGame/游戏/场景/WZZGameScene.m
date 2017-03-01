@@ -22,6 +22,7 @@ static int32_t loadMask = 0x1 << 1;
     NSMutableArray <SKSpriteNode *>* loadsArr;
     WZZListenManager * manager;
     BOOL canJump;
+    void(^_gameOverBlock)();
 }
 
 @end
@@ -40,6 +41,7 @@ static int32_t loadMask = 0x1 << 1;
         manager = [WZZListenManager shareManager];
 //        [manager setUseMaxVal:YES];
         [manager startListenWithBlock:^(Float32 level) {
+            [self checkGameOver];
             [self handleActionWithVoiceLevel:level];
 #if TEST_OPEN
             [self testLevel:level];
@@ -119,6 +121,7 @@ static int32_t loadMask = 0x1 << 1;
 #endif
 
 #pragma mark - 方法
+#pragma mark 创建
 //创建小人
 - (void)creat8BitNode {
     bit8 = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(30, 30)];
@@ -142,6 +145,7 @@ static int32_t loadMask = 0x1 << 1;
     [loadsArr addObject:load];
 }
 
+#pragma mark 方法
 //根据精灵的长度计算需要的时间(速度固定)
 - (NSTimeInterval)timeWithHowLong:(CGFloat)howLong {
     return [self timeWithHowLong:howLong vector:MOVEVECTOR];
@@ -152,6 +156,7 @@ static int32_t loadMask = 0x1 << 1;
     return howLong/vector;
 }
 
+#pragma mark 动作
 //根据音量处理动作
 - (void)handleActionWithVoiceLevel:(Float32)level {
     const Float32 runLevel = 0.1f;//开跑的level
@@ -217,6 +222,23 @@ static int32_t loadMask = 0x1 << 1;
     if (canJump) {
         bit8.physicsBody.velocity = CGVectorMake(0, 1000*level);
         canJump = NO;
+    }
+}
+
+#pragma mark 游戏
+- (void)checkGameOver {
+    if (bit8.position.y < -bit8.size.height) {
+        //gameover
+        if (_gameOverBlock) {
+            _gameOverBlock();
+        }
+    }
+}
+
+#pragma mark - block赋值
+- (void)gameOverBlock:(void (^)())aBlock {
+    if (_gameOverBlock != aBlock) {
+        _gameOverBlock = aBlock;
     }
 }
 
