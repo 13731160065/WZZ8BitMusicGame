@@ -32,12 +32,14 @@ static int32_t loadMask = 0x1 << 1;
     NSArray * testArr;
 }
 
-- (instancetype)initWithSize:(CGSize)size
+- (instancetype)initWithSize:(CGSize)size manImage:(NSString *)image
 {
     self = [super initWithSize:size];
     if (self) {
+        _bit8ImageText = image;
         manager = [WZZListenManager shareManager];
 //        [manager setUseMaxVal:YES];
+        [self creatAll];
         [manager startListenWithBlock:^(Float32 level) {
             [self checkGameOver];
             [self handleActionWithVoiceLevel:level];
@@ -50,8 +52,7 @@ static int32_t loadMask = 0x1 << 1;
 }
 
 #pragma mark - 初始化
-
-- (void)sceneDidLoad {
+- (void)creatAll {
     [self setup];
     
     //创建一开始的路

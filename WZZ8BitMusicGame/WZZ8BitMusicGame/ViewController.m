@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "WZZGameScene.h"
+#import "WZZSelectManVC.h"
 @import SpriteKit;
 
 #define TRUEPASS @"^^vv<><>ba"
@@ -16,7 +17,9 @@
 {
     SKView * gameView;
     NSString * gotoTestModePass;
+    NSString * manImageName;
 }
+@property (weak, nonatomic) IBOutlet UIButton *manButton;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @end
@@ -29,6 +32,15 @@
     [self.view layoutIfNeeded];
     gotoTestModePass = @"";
 }
+
+- (IBAction)selectManClick:(id)sender {
+    WZZSelectManVC * vc = [[WZZSelectManVC alloc] init];
+    [vc selectAImage:^(NSString *imageName) {
+        manImageName = imageName;
+        [_manButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    }];
+    [self presentViewController:vc animated:YES completion:nil];
+}
     
 - (IBAction)startGame:(id)sender {
     [self resetGame];
@@ -38,7 +50,7 @@
     BOOL isTestMode = [gotoTestModePass isEqualToString:TRUEPASS];
     gameView = [[SKView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:gameView];
-    WZZGameScene * scene = [[WZZGameScene alloc] initWithSize:gameView.frame.size];
+    WZZGameScene * scene = [[WZZGameScene alloc] initWithSize:gameView.frame.size manImage:manImageName];
     scene.showTest = isTestMode;
     [scene gameOverBlock:^{
         [gameView removeFromSuperview];

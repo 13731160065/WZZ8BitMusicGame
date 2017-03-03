@@ -18,6 +18,9 @@
 		264EC5FB1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC5FA1E6513A30044BDFA /* WZZ8BitMusicGameUITests.m */; };
 		264EC60B1E65158D0044BDFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264EC6091E65158D0044BDFA /* ViewController.m */; };
 		264EC60C1E65158D0044BDFA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264EC60A1E65158D0044BDFA /* ViewController.xib */; };
+		26C50A221E67BC2B00E40BB9 /* WZZSelectManVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C50A201E67BC2B00E40BB9 /* WZZSelectManVC.m */; };
+		26C50A231E67BC2B00E40BB9 /* WZZSelectManVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C50A211E67BC2B00E40BB9 /* WZZSelectManVC.xib */; };
+		26C50A261E67D66800E40BB9 /* WZZManModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C50A251E67D66800E40BB9 /* WZZManModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,11 @@
 		264EC6081E65158D0044BDFA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		264EC6091E65158D0044BDFA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		264EC60A1E65158D0044BDFA /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		26C50A1F1E67BC2B00E40BB9 /* WZZSelectManVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZSelectManVC.h; sourceTree = "<group>"; };
+		26C50A201E67BC2B00E40BB9 /* WZZSelectManVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZSelectManVC.m; sourceTree = "<group>"; };
+		26C50A211E67BC2B00E40BB9 /* WZZSelectManVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZSelectManVC.xib; sourceTree = "<group>"; };
+		26C50A241E67D66800E40BB9 /* WZZManModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZManModel.h; sourceTree = "<group>"; };
+		26C50A251E67D66800E40BB9 /* WZZManModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZManModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 				264EC6081E65158D0044BDFA /* ViewController.h */,
 				264EC6091E65158D0044BDFA /* ViewController.m */,
 				264EC60A1E65158D0044BDFA /* ViewController.xib */,
+				26C50A1B1E67BC1000E40BB9 /* 选择人物 */,
 				260AB05B1E6575F000E18DDF /* 工具 */,
 				260AB0561E6575DC00E18DDF /* 游戏 */,
 				264EC5E11E6513A30044BDFA /* Assets.xcassets */,
@@ -177,6 +186,35 @@
 				264EC5FC1E6513A40044BDFA /* Info.plist */,
 			);
 			path = WZZ8BitMusicGameUITests;
+			sourceTree = "<group>";
+		};
+		26C50A1B1E67BC1000E40BB9 /* 选择人物 */ = {
+			isa = PBXGroup;
+			children = (
+				26C50A1C1E67BC1000E40BB9 /* Controller */,
+				26C50A1D1E67BC1000E40BB9 /* Model */,
+			);
+			name = "选择人物";
+			path = "界面/选择人物";
+			sourceTree = "<group>";
+		};
+		26C50A1C1E67BC1000E40BB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26C50A1F1E67BC2B00E40BB9 /* WZZSelectManVC.h */,
+				26C50A201E67BC2B00E40BB9 /* WZZSelectManVC.m */,
+				26C50A211E67BC2B00E40BB9 /* WZZSelectManVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		26C50A1D1E67BC1000E40BB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26C50A241E67D66800E40BB9 /* WZZManModel.h */,
+				26C50A251E67D66800E40BB9 /* WZZManModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +327,7 @@
 				264EC5E51E6513A30044BDFA /* LaunchScreen.storyboard in Resources */,
 				264EC60C1E65158D0044BDFA /* ViewController.xib in Resources */,
 				264EC5E21E6513A30044BDFA /* Assets.xcassets in Resources */,
+				26C50A231E67BC2B00E40BB9 /* WZZSelectManVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,9 +352,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C50A261E67D66800E40BB9 /* WZZManModel.m in Sources */,
 				260AB05A1E6575DC00E18DDF /* WZZGameScene.m in Sources */,
 				264EC60B1E65158D0044BDFA /* ViewController.m in Sources */,
 				260AB0611E65764200E18DDF /* WZZListenManager.m in Sources */,
+				26C50A221E67BC2B00E40BB9 /* WZZSelectManVC.m in Sources */,
 				264EC5DA1E6513A30044BDFA /* AppDelegate.m in Sources */,
 				260AB0601E65764200E18DDF /* SCListener.m in Sources */,
 				264EC5D71E6513A30044BDFA /* main.m in Sources */,

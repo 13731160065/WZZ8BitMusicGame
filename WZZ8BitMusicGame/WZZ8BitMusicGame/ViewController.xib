@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
+                <outlet property="manButton" destination="a7T-QT-RQu" id="ELV-sF-eLp"/>
                 <outlet property="startButton" destination="Swe-tu-AAn" id="6Lh-cI-S9X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -122,6 +123,17 @@
                         <action selector="c:" destination="-1" eventType="touchUpInside" id="cLi-gw-JhK"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7T-QT-RQu">
+                    <rect key="frame" x="20" y="20" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="FUK-bk-Tbb"/>
+                        <constraint firstAttribute="width" constant="70" id="NLi-se-dFa"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="bit8"/>
+                    <connections>
+                        <action selector="selectManClick:" destination="-1" eventType="touchUpInside" id="3SM-tZ-i5R"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -133,9 +145,11 @@
                 <constraint firstItem="Vva-fk-7HD" firstAttribute="centerY" secondItem="HsV-zU-PdU" secondAttribute="centerY" id="MTA-zx-VmH"/>
                 <constraint firstItem="Vva-fk-7HD" firstAttribute="leading" secondItem="YHb-Og-zKn" secondAttribute="trailing" constant="20" id="MaK-R9-dbx"/>
                 <constraint firstItem="Equ-sb-kPf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="MpJ-0f-LfC"/>
+                <constraint firstItem="a7T-QT-RQu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="UZF-yI-aO5"/>
                 <constraint firstItem="FvW-3H-EZ1" firstAttribute="leading" secondItem="Swe-tu-AAn" secondAttribute="trailing" constant="8" id="Ui4-id-Q2t"/>
                 <constraint firstAttribute="trailing" secondItem="moD-KL-RgP" secondAttribute="trailing" id="VeF-ZT-xWG"/>
                 <constraint firstAttribute="trailing" secondItem="HsV-zU-PdU" secondAttribute="trailing" id="Yjd-3t-vbe"/>
+                <constraint firstItem="a7T-QT-RQu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="a8T-Lk-VfW"/>
                 <constraint firstItem="M83-SX-rnh" firstAttribute="centerX" secondItem="A0b-MN-KpB" secondAttribute="centerX" id="ahC-Fu-olF"/>
                 <constraint firstAttribute="bottom" secondItem="Swe-tu-AAn" secondAttribute="bottom" constant="50" id="dNC-uJ-LGP"/>
                 <constraint firstItem="7TX-8M-JUg" firstAttribute="centerY" secondItem="Swe-tu-AAn" secondAttribute="centerY" id="e8G-eh-TGo"/>
@@ -152,4 +166,7 @@
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="bit8" width="90" height="90"/>
+    </resources>
 </document>

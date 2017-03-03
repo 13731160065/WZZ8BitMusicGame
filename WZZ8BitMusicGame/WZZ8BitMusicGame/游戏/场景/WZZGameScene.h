@@ -20,4 +20,9 @@
  */
 - (void)gameOverBlock:(void(^)())aBlock;
 
+/**
+ 初始化
+ */
+- (instancetype)initWithSize:(CGSize)size manImage:(NSString *)image;
+
 @end
